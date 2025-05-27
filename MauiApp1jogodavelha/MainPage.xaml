@@ -15,10 +15,10 @@
 
             <Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="Transparent" />
-                <Setter Property="CornerRadius" Value="15" />
+                <Setter Property="CornerRadius" Value="20" />
                 <Setter Property="TextColor" Value="Cyan" />
                 <Setter Property="FontSize" Value="80" />
-                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="BorderWidth" Value="4" />
                 <Setter Property="BorderColor" Value="Cyan" />
             </Style>
         </ResourceDictionary>
@@ -27,11 +27,24 @@
           RowDefinitions="Auto, *, *, *" 
           ColumnDefinitions="*, *, *"
           
-          ColumnSpacing="10" RowSpacing="10" Margin="5">
+          ColumnSpacing="15" RowSpacing="15" Margin="10">
 
         <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
-               Text="Jogo da Velha"
-               FontSize="24"
+               Text="Jogo Da Velha"
+               FontSize="60"
+               FontFamily="KalamLight"
+               FontAttributes="Bold"
+               TextColor="Gray"
+               Opacity="0.6"
+               TranslationX="10" TranslationY="15" />
+
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+               Text="Jogo Da Velha"
+               FontSize="60"
+               FontFamily="KalamLight"
+               FontAttributes="Bold"
+               TextColor="#c71585"
+               Opacity="0.8"
                HorizontalOptions="Center" />
                
         <Button x:Name="btn10" Grid.Row="1" Grid.Column="0" Clicked="Button_Clicked" />

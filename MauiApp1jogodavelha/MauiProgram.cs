@@ -13,6 +13,8 @@ namespace MauiApp1jogodavelha
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("Kalam-Light.ttf", "KalamLight");
+                    fonts.AddFont("Playfair_9pt-Italic.ttf", "PlayfairItalic");
                 });
 
 #if DEBUG
