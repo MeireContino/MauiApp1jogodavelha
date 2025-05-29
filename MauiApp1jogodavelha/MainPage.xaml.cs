@@ -14,73 +14,67 @@
         {
             Button btn = (Button)sender;
             btn.IsEnabled = false;
-            btn.Text = vez;
 
-            /*identificar vitória imediatamente */
-            if (btn10.Text == vez && btn11.Text == vez && btn12.Text == vez) 
+            // Alternar o jogador
+            if (vez == "X")
             {
-                DisplayAlert("Parabéns!", $"Vitoria do {vez}!", "OK");
+                btn.Text = "X";
+                vez = "O";
+            }
+            else 
+            {
+                btn.Text = "O";
+                vez = "X";
+            }
+           
+            /* Ver todas as combinações possíveis para o 'X' */
+            
+            if (btn10.Text == "X" && btn11.Text == "X" && btn12.Text == "X" ||
+                btn20.Text == "X" && btn21.Text == "X" && btn22.Text == "X" ||
+                btn30.Text == "X" && btn31.Text == "X" && btn32.Text == "X" ||
+                
+                btn10.Text == "X" && btn20.Text == "X" && btn30.Text == "X" ||
+                btn11.Text == "X" && btn21.Text == "X" && btn31.Text == "X" ||
+                btn12.Text == "X" && btn22.Text == "X" && btn32.Text == "X" ||
+                
+                btn10.Text == "X" && btn21.Text == "X" && btn32.Text == "X" ||
+                btn11.Text == "X" && btn22.Text == "X" && btn30.Text == "X") 
+            {
+                DisplayAlert("Parabéns!", "Vitória do X !", "OK");
                 Zerar();
                 return; 
             }
-            if (btn10.Text == vez && btn20.Text == vez && btn30.Text == vez) 
+
+            /* Ver todas as combinações possíveis para o 'O' */
+
+            if (btn10.Text == "O" && btn11.Text == "O" && btn12.Text == "O" ||
+                btn20.Text == "O" && btn21.Text == "O" && btn22.Text == "O" ||
+                btn30.Text == "O" && btn31.Text == "O" && btn32.Text == "O" ||
+
+                btn10.Text == "O" && btn20.Text == "O" && btn30.Text == "O" ||
+                btn11.Text == "O" && btn21.Text == "O" && btn31.Text == "O" ||
+                btn12.Text == "O" && btn22.Text == "O" && btn32.Text == "O" ||
+
+                btn10.Text == "O" && btn21.Text == "O" && btn32.Text == "O" ||
+                btn11.Text == "O" && btn22.Text == "O" && btn30.Text == "O")
             {
-                DisplayAlert("Parabéns!", $"Vitoria do {vez}!", "OK");
-                Zerar();
-                return;
-            }
-            if (btn10.Text == vez && btn21.Text == vez && btn32.Text == vez) 
-            {
-                DisplayAlert("Parabéns!", $"Vitoria do {vez}!", "OK");
-                Zerar();
-                return;
-            }
-            if (btn12.Text == vez && btn21.Text == vez && btn30.Text == vez) 
-            {
-                DisplayAlert("Parabéns!", $"Vitoria do {vez}!", "OK");
-                Zerar();
-                return;
-            }
-            if (btn20.Text == vez && btn21.Text == vez && btn22.Text == vez) 
-            {
-                DisplayAlert("Parabéns!", $"Vitoria do {vez}!", "OK");
-                Zerar();
-                return;
-            }
-            if (btn30.Text == vez && btn31.Text == vez && btn32.Text == vez) 
-            {
-                DisplayAlert("Parabéns!", $"Vitoria do {vez}!", "OK");
-                Zerar();
-                return;
-            }
-            if (btn11.Text == vez && btn21.Text == vez && btn31.Text == vez) 
-            {
-                DisplayAlert("Parabéns!", $"Vitoria do {vez}!", "OK");
-                Zerar();
-                return;
-            }
-            if (btn12.Text == vez && btn22.Text == vez && btn32.Text == vez) 
-            {
-                DisplayAlert("Parabéns!", $"Vitoria do {vez}!", "OK");
+                DisplayAlert("Parabéns!", "Vitória do O !", "OK");
                 Zerar();
                 return;
             }
 
 
-            /*Verificar empate*/
+            /*Verificar se deu velha, em caso de empate ninguém ganha*/
             if (btn10.IsEnabled == false && btn11.IsEnabled == false && btn12.IsEnabled == false &&
                 btn20.IsEnabled == false && btn21.IsEnabled == false && btn22.IsEnabled == false &&
                 btn30.IsEnabled == false && btn31.IsEnabled == false && btn32.IsEnabled == false
                )
             {
-                DisplayAlert("Empate", "Ninguém ganhou!, Jogue Novamente", "OK");
+                DisplayAlert("Empate", "Deu Velha", "Ninguém ganhou!", "OK");
                 Zerar();
                 return;
             }
-
-            /* Alternar vez somente se ninguém venceu*/
-            vez = vez == "X" ? "O" : "X";
-                        
+                                 
         } // Fecha método
              
         void Zerar() 

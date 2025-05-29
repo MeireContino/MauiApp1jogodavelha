@@ -8,7 +8,7 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <LinearGradientBrush x:Key="EfeitoVisualFundo" StartPoint="0,1" EndPoint="1,0">
-                <GradientStop Color="DodgerBlue" Offset="0.0" />
+                <GradientStop Color="darkBlue" Offset="0.0" />
                 <GradientStop Color="Turquoise" Offset="0.5" />
                 <GradientStop Color="BlueViolet" Offset="1.0" />
             </LinearGradientBrush>
@@ -16,7 +16,8 @@
             <Style TargetType="Button">
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="CornerRadius" Value="20" />
-                <Setter Property="TextColor" Value="Cyan" />
+                <Setter Property="TextColor" Value="Orange" />
+                <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="80" />
                 <Setter Property="BorderWidth" Value="4" />
                 <Setter Property="BorderColor" Value="Cyan" />
@@ -44,7 +45,7 @@
                FontFamily="KalamLight"
                FontAttributes="Bold"
                TextColor="#c71585"
-               Opacity="0.8"
+              
                HorizontalOptions="Center" />
                
         <Button x:Name="btn10" Grid.Row="1" Grid.Column="0" Clicked="Button_Clicked" />
